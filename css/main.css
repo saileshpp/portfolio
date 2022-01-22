@@ -725,10 +725,6 @@ body {
   opacity: 0;
 }
 
-.preloadMain {
-  opacity: 1;
-}
-
 .slide_left {
   -webkit-transform: translateX(-360px);
           transform: translateX(-360px);

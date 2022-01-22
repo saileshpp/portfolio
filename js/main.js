@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         const preloadWrap = document.querySelector('.preload_wrap')
         preloadWrap.classList.add('preload_finish')
-        main.classList.add('preloadMain')
+        main.style.opacity = 1;
     })
 })

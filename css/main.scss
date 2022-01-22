@@ -215,9 +215,7 @@ body {
     transition: all 0.5s ease-in-out, opacity 1s 1.8s;
     opacity: 0;
 }
-.preloadMain {
-    opacity: 1;
-}
+
 .slide_left {
     transform: translateX(-360px);
 }
