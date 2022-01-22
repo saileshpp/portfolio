@@ -1,0 +1,121 @@
+@import "scss/var";
+
+a {
+    text-decoration: none !important;
+}
+body {
+    font-family: var(--custom-font-);
+}
+
+// Main Section
+.main {
+    background-color: rgba($color: #181818, $alpha: 0.85);
+    height: 100vh;
+    width: 100vw;
+}
+
+// Left Content
+.left_content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 29rem;
+    .inner_content {
+        position: relative;
+        transition: all 0.5s;
+        transform-style: preserve-3d;
+        transform: rotateY(8deg);
+        .name {
+            position: absolute;
+            bottom: 2rem;
+            left: 3rem;
+            z-index: 10;
+            color: #fff;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #fff;
+                width: 4rem;
+                height: 0.1rem;
+            }
+            h2 {
+                letter-spacing: 0.02em;
+                font-weight: 300;
+                line-height: 1.48em;
+                font-size: 1.5rem;
+            }
+        }
+        .picture_box {
+            .img_wrap {
+                max-width: 419px;
+            }
+
+            .frame {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: -2;
+                border: 1px solid #fff;
+                pointer-events: none;
+            }
+            .frame_1 {
+                opacity: 0.25;
+                transform: translate(-1.2rem, 1.2rem);
+            }
+            .frame_2 {
+                opacity: 0.15;
+                transform: translate(-2.2rem, 2.2rem);
+            }
+            .frame_3 {
+                opacity: 0.05;
+                transform: translate(-3.3rem, 3.3rem);
+            }
+        }
+    }
+}
+
+/* responsive xl */
+@media (max-width: 1199px) {
+}
+
+/* responsive lg */
+@media (max-width: 991px) {
+}
+
+/* responsive md */
+@media (max-width: 768px) {
+    .left_content {
+        .inner_content {
+            height: 100%;
+            width: 100%;
+            transform: rotateY(0deg);
+            .name {
+                transform: translate(-50%, 50%);
+                bottom: 50%;
+                left: 50%;
+            }
+            .picture_box {
+                .img_wrap {
+                    max-width: 100%;
+                    img {
+                        height: 100vh;
+                        object-fit: cover;
+                    }
+                }
+
+                .frame {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+/* responsive sm */
+@media (max-width: 575px) {
+}
