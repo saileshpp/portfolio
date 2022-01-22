@@ -464,8 +464,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s 1s;
+  transition: all 0.5s 1s;
 }
 
 .preload_wrap .preload {
@@ -476,28 +476,42 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
   gap: 10px;
 }
 
 .preload_wrap .preload .text {
   color: #fff;
   font-size: 2rem;
+  -webkit-transition: -webkit-transform 1s 0.2s;
+  transition: -webkit-transform 1s 0.2s;
+  transition: transform 1s 0.2s;
+  transition: transform 1s 0.2s, -webkit-transform 1s 0.2s;
 }
 
 .preload_wrap .preload .fill {
   width: 4rem;
   height: 2px;
   background-color: #fff;
-  -webkit-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
   -webkit-animation: preloadfill 2s infinite;
           animation: preloadfill 2s infinite;
 }
 
 .preload_finish {
-  opacity: 0;
   visibility: hidden;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.preload_finish .preload .text {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.preload_finish .preload .fill {
+  opacity: 0;
 }
 
 .hamburger {
@@ -698,13 +712,21 @@ body {
           transform: translateY(0px);
 }
 
-.main {
+.body {
   background-color: rgba(24, 24, 24, 0.95);
+}
+
+.main {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out, opacity 1s 1.8s;
+  transition: all 0.5s ease-in-out, opacity 1s 1.8s;
+  opacity: 0;
+}
+
+.preloadMain {
+  opacity: 1;
 }
 
 .slide_left {

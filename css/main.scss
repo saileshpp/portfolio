@@ -16,28 +16,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .5s;
+    transition: all 0.5s 1s;
     .preload {
         display: flex;
         flex-direction: column;
-        overflow-x: hidden;
+        overflow: hidden;
         gap: 10px;
         .text {
             color: #fff;
             font-size: 2rem;
+            transition: transform 1s 0.2s;
         }
         .fill {
             width: 4rem;
             height: 2px;
             background-color: #fff;
-            transition: all 0.1s ease-in-out;
+            transition: opacity 1s ease-in-out;
             animation: preloadfill 2s infinite;
         }
     }
 }
-.preload_finish{
-    opacity: 0;
+
+.preload_finish {
     visibility: hidden;
+    transform: translateY(100%);
+    .preload {
+        .text {
+            transform: translateY(100%);
+        }
+        .fill {
+            opacity: 0;
+        }
+    }
 }
 // Hamburger section
 .hamburger {
@@ -194,14 +204,19 @@ body {
         }
     }
 }
-
+.body {
+    background-color: rgba($color: #181818, $alpha: 0.95);
+}
 // Main Section
 .main {
-    background-color: rgba($color: #181818, $alpha: 0.95);
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out, opacity 1s 1.8s;
+    opacity: 0;
+}
+.preloadMain {
+    opacity: 1;
 }
 .slide_left {
     transform: translateX(-360px);
