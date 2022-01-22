@@ -22,16 +22,17 @@ body {
         flex-direction: column;
         overflow: hidden;
         gap: 10px;
+        animation: fadeIn 1s 1;
         .text {
             color: #fff;
             font-size: 2rem;
-            transition: transform 1s 0.2s;
+            transition: transform 0.7s 0.2s;
         }
         .fill {
             width: 4rem;
             height: 2px;
             background-color: #fff;
-            transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out 0.2s;
             animation: preloadfill 2s infinite;
         }
     }
@@ -324,7 +325,14 @@ body {
         transform: translateX(100%);
     }
 }
-
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 /* responsive xl */
 @media (max-width: 1199px) {
 }
