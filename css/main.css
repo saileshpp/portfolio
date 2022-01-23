@@ -446,6 +446,10 @@ a {
   text-decoration: none !important;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--custom-font-);
 }
@@ -480,6 +484,7 @@ body {
           align-items: center;
   -webkit-transition: all 0.5s 1.1s ease-in-out;
   transition: all 0.5s 1.1s ease-in-out;
+  opacity: 1;
 }
 
 .preload_wrap .preload {
@@ -522,8 +527,8 @@ body {
 }
 
 .preload_finish .preload .text {
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
 }
 
 .preload_finish .preload .fill {
@@ -901,6 +906,7 @@ body {
 }
 
 .right_content {
+  max-width: 590px;
   color: #fff;
 }
 
@@ -955,6 +961,109 @@ body {
   font-size: 25px;
   font-weight: 300;
   letter-spacing: -0.005em;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 2rem 1rem 1.2rem 0;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-bottom: 0.1rem solid #fff;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.accordion::after {
+  content: "\f078";
+  font-size: 18px;
+  font-weight: 900;
+  color: #7c7c7c;
+  float: right;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-left: 5px;
+  font-family: "Font Awesome 5 Free";
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+
+.active::after {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+.panel {
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.4s ease-out;
+  transition: max-height 0.4s ease-out;
+}
+
+.resume {
+  margin-top: 30px;
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+.resume .item {
+  margin: 0 0 40px 40px;
+  padding: 50px 60px;
+  background-color: var(--custom-black);
+  position: relative;
+}
+
+.resume .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  z-index: 11;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 2rem;
+  height: 2rem;
+  background: inherit;
+}
+
+.resume .item::after {
+  content: "";
+  position: absolute;
+  left: -2.51rem;
+  top: 20%;
+  z-index: 11;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+  width: 1px;
+  height: 40px;
+  background: #fff;
+}
+
+.resume .item .tag {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.resume .item .tag span {
+  font-size: 12px;
+}
+
+.resume .item h2 {
+  font-size: 24px;
+}
+
+.resume .item p {
+  margin-top: 10px;
 }
 
 @-webkit-keyframes fill {
@@ -1088,6 +1197,9 @@ body {
   .right_content p {
     font-size: 18px;
   }
+  .resume .item::after {
+    left: -2.67rem;
+  }
 }
 
 /* responsive md */
@@ -1132,6 +1244,10 @@ body {
     -webkit-transform: translateX(-24%);
             transform: translateX(-24%);
   }
+  .right_content {
+    max-width: 400px;
+    margin-inline: auto;
+  }
   .right_content section {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1145,7 +1261,29 @@ body {
   .right_content .offset {
     padding: 0 0 20px 10px;
   }
+  .resume .item::after {
+    left: -2.8rem;
+  }
 }
 
 /* responsive sm */
+@media (max-width: 575px) {
+  .hamburger {
+    position: fixed;
+    top: 1.5rem;
+    right: 0.5rem;
+  }
+  .resume .item {
+    margin: 0 0 30px 30px;
+    padding: 40px;
+  }
+  .resume .item::after {
+    content: "";
+    position: absolute;
+    left: -2.15rem;
+  }
+  .resume .item .tag span {
+    font-size: 8px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
