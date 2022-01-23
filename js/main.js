@@ -28,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
         image2: 'img/main_img2.jpg',
         displacementImage: 'img/displacement/10.jpg'
     });
+
 })
