@@ -29,4 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         displacementImage: 'img/displacement/10.jpg'
     });
 
+
+    AOS.init({
+        duration: 1000,
+    });
 })
