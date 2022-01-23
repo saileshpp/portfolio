@@ -20,4 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
         preloadWrap.classList.add('preload_finish')
         main.style.opacity = 1;
     })
+    const canvas = document.querySelector('.picture_box .img_wrap')
+    const myAnimation = new hoverEffect({
+        parent: canvas,
+        intensity: .5,
+        image1: 'img/main_img.jpg',
+        image2: 'img/main_img2.jpg',
+        displacementImage: 'img/displacement/10.jpg'
+    });
 })
