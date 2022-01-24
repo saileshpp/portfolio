@@ -21,6 +21,10 @@ body {
         letter-spacing: 0;
     }
 }
+.dis-none{
+    opacity: 0;
+    visibility: hidden;
+}
 // preload
 .preload_wrap {
     background-color: var(--custom-black);
@@ -602,8 +606,8 @@ body {
         inset: 0;
         .inner_content {
             transition: all 1s;
-            transform: translate(-65%, 0) rotateY(50deg) scale(.9) !important;
-            opacity: 0.25;
+            transform: translate(-65%, 0) rotateY(50deg) scale(0.9) !important;
+            opacity: 0.15;
         }
     }
     .side_nav {
@@ -622,7 +626,7 @@ body {
                 height: 100%;
                 padding-bottom: 5rem;
             }
-            &:first-child{
+            &:first-child {
                 margin-top: 100vh;
             }
         }
@@ -656,7 +660,7 @@ body {
             }
             .tag {
                 span {
-                    font-size: 8px;
+                    font-size: 10px;
                 }
             }
         }

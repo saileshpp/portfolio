@@ -468,6 +468,11 @@ body {
   letter-spacing: 0;
 }
 
+.dis-none {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .preload_wrap {
   background-color: var(--custom-black);
   position: fixed;
@@ -1247,7 +1252,7 @@ body {
     transition: all 1s;
     -webkit-transform: translate(-65%, 0) rotateY(50deg) scale(0.9) !important;
             transform: translate(-65%, 0) rotateY(50deg) scale(0.9) !important;
-    opacity: 0.25;
+    opacity: 0.15;
   }
   .side_nav {
     width: 76%;
@@ -1298,7 +1303,7 @@ body {
     left: -2.15rem;
   }
   .resume .item .tag span {
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */

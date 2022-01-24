@@ -2,15 +2,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const canvasWrapper = document.querySelector('.left_content ')
     const main = document.querySelector('.main')
+    const scroll = document.querySelector('.scroll')
+    
+    AOS.init({
+        duration: 1000,
+    });
 
     main.addEventListener('scroll', () => {
-
-
         if (main.scrollTop) {
             canvasWrapper.classList.add('mobileScroll')
+            scroll.classList.add('dis-none')
         }
         else {
             canvasWrapper.classList.remove('mobileScroll')
+            scroll.classList.remove('dis-none')
         }
     })
 
@@ -34,10 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         displacementImage: 'img/displacement/10.jpg',
     });
 
-
-    AOS.init({
-        duration: 1000,
-    });
 
     const accs = document.querySelectorAll(".accordion");
 
