@@ -519,8 +519,8 @@ body {
   width: 4rem;
   height: 2px;
   background-color: #fff;
-  -webkit-transition: opacity 1s ease-in-out 0.2s;
-  transition: opacity 1s ease-in-out 0.2s;
+  -webkit-transition: all 1s ease-in-out 0.2s;
+  transition: all 1s ease-in-out 0.2s;
   -webkit-animation: preloadfill 2s infinite;
           animation: preloadfill 2s infinite;
 }
@@ -537,7 +537,9 @@ body {
 }
 
 .preload_finish .preload .fill {
+  width: 100%;
   opacity: 0;
+  height: 0;
 }
 
 .hamburger {
@@ -1243,9 +1245,10 @@ body {
     display: none;
   }
   .mobileScroll {
-    position: absolute;
-    z-index: -1;
-    inset: 0;
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    left: 0;
   }
   .mobileScroll .inner_content {
     -webkit-transition: all 1s;
