@@ -1,20 +1,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    const canvasWrapper = document.querySelector('.left_content .inner_content')
+    const canvasWrapper = document.querySelector('.left_content ')
+    const main = document.querySelector('.main')
 
-    window.addEventListener('scroll', () => {
-        console.log('hello')
-        if (window.scrollY) {
-            canvasWrapper.classList.add('scrollCanvas')
+    main.addEventListener('scroll', () => {
+
+
+        if (main.scrollTop) {
+            canvasWrapper.classList.add('mobileScroll')
         }
         else {
-            canvasWrapper.classList.remove('scrollCanvas')
+            canvasWrapper.classList.remove('mobileScroll')
         }
     })
 
     const hamburger = document.querySelector(".hamburger")
     const sideNav = document.querySelector('.side_nav')
-    const main = document.querySelector('.main')
+
 
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('is-active')
